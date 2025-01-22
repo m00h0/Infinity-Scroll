@@ -19,10 +19,10 @@ function imageLoaded() {
 
 // Helper function to set attributes on DOM elements
 function setAttributes(element, attributes) {
-  Object.entries(attributes).forEach(([key, value]) => {
-    element.setAttribute(key, value);
-  });
-}
+    Object.entries(attributes).forEach(([key, value]) => {
+      element.setAttribute(key, value);
+    });
+  }
 
 // Create elements for links & photos, add to DOM
 function displayPhotos() {

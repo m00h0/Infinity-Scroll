@@ -1,101 +1,141 @@
-# HTML & CSS3 & JavaScript Course
+<h3><b>Infinity Scroll</b></h3>
 
-If you are not familiar with linters, read [root level README](../README.md).
+</div>
 
-## Set-up GitHub Actions
+# 📗 My Project Contents
 
-Please do the following **steps in this order**:
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)  
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-1. In the first commit of your feature branch create a `.github/workflows` folder and add a copy of [`.github/workflows/linters.yml`](.github/workflows/linters.yml) to that folder.
-   - **Remember** to use the file linked above
-   - **Remember** that `.github` folder starts with a dot.
-2. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-   - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-3. When you open your first pull request you should see the result of the GitHub actions checks:
+## 📖 About the Project <a name="about-project"></a>
 
-![gh actions checks](../assets/images/gh-actions-html-css-checks.png)
+Infinity Scroll is a web application that fetches random photos from the Unsplash API and displays them in an infinite scroll format. As the user scrolls down the page, more photos are loaded automatically.
 
-Click on the `Details` link of each action to see the full output and the errors that need to be fixed:
+### 🛠 Built With <a name="built-with"></a>
 
-![gh actions failing checks](../assets/images/gh-actions-html-css-failing-checks.png)
+#### Tech Stack <a name="tech-stack"></a>
 
-## Set-up linters in your local env
+- HTML
+- CSS
+- JavaScript
+- Node.js
+- Express
 
-**Note**: The `npm` package manager is going to create a `node_modules` directory to install all of your dependencies. You shouldn't commit that directory. To avoid that, you can create a [`.gitignore`](https://git-scm.com/docs/gitignore) file and add `node_modules` to it:
+#### Key Features <a name="key-features"></a>
+
+- Fetches random photos from the Unsplash API
+- Displays photos in an infinite scroll format
+- Responsive design
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- Coming Soon!
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps:
+
+### Prerequisites <a name="prerequisites"></a>
+
+- Node.js installed on your machine
+- Unsplash API key (Get one from [Unsplash Developer](https://unsplash.com/developers))
+
+In order to run this project you need:
+
+- Node.js installed on your machine
+- Unsplash API key - Follow these steps:
+  1. Go to [Unsplash Developers](https://unsplash.com/developers)
+  2. Click "Register as a developer"
+  3. Log in or create a new Unsplash account
+  4. Once logged in, go to [Your Apps](https://unsplash.com/oauth/applications)
+  5. Click "New Application"
+  6. Accept the terms and conditions
+  7. Fill in your application information:
+     - Application name: Your app name
+     - Description: Brief description of your app
+     - Select "Demo" as application type
+  8. Click "Create application"
+  9. In your new application, find the "Access Key"
+  10. Create a `.env` file in your project root:
+      ```properties
+      UNSPLASH_API_KEY=your_access_key_here
+      ```
+  11. Replace `your_access_key_here` with the Access Key from step 9
+
+Note: Never commit your [.env](http://_vscodecontentref_/0) file to version control. Make sure it's listed in your [.gitignore](http://_vscodecontentref_/1) file.
+
+### Setup <a name="setup"></a>
+
+1. Clone this repository:
+```bash
+git clone https://github.com/yourusername/Infinity-Scroll.git
+cd Infinity-Scroll
 
 ```
-# .gitignore
-node_modules/
+
+2. Create a .env file in the root directory and add your Unsplash API key:
+```bash
+UNSPLASH_API_KEY=your_unsplash_api_key
+
 ```
 
-### [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+Install <a name="install"></a>
 
-An open-source, automated tool for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO and more.
+Install dependencies:
+```bash
+npm install
 
-You can get the Lighthouse report by any of the following ways:
+```
 
-- [In Chrome DevTools](https://developers.google.com/web/tools/lighthouse#devtools)
-- [From the command line](https://developers.google.com/web/tools/lighthouse#cli)
-- [As a Node module](https://developers.google.com/web/tools/lighthouse#programmatic)
-- [From a web UI](https://developers.google.com/web/tools/lighthouse#psi)
+Usage <a name="usage"></a>
 
-To access the report generated by Lighthouse on your pull request, click the `Details` link for the `Linters/Lighthouse` check and you will see the full output of the action:
+Start the server:
+```bash
+node server.js
 
-![lighthouse report](../assets/images/lighthouse-report.png)
+```
 
-### [Webhint](https://webhint.io/)
+Open http://localhost:3000 in your browser.
 
-A customizable linting tool that helps you improve your site's accessibility, speed, cross-browser compatibility, and more by checking your code for best practices and common errors.
+👥 Authors <a name="authors"></a>
+👤 Your Name: Ahmed
 
-**NOTE:** If you are running on Windows, you need to initialize npm to create `package.json` file. 
-   ```
-   npm init -y
-   ```
+GitHub: @m00h0
 
-1. Run
-   ```
-   npm install --save-dev hint@7.x
-   ```
-   *not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
-2. Copy [.hintrc](.hintrc) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-   - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run
-   ```
-   npx hint .
-   ```
-5. Fix validation errors.
+🔭 Future Features <a name="future-features"></a>
+Add search functionality
+Add image filtering options
+Add user favorites
 
-### [Stylelint](https://stylelint.io/)
+## 🤝 Contributing <a name="contributing"></a>
 
-A mighty, modern linter that helps you avoid errors and enforce conventions in your styles.
+Contributions, issues, and feature requests are welcome!
 
-1. Run
+Feel free to check the [issues page](https://github.com/m00h0/Quote-Generator/issues).
 
-   ```
-   npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
-   ```
+⭐️ Show your support <a name="support"></a>
 
-   *not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
+Give a ⭐️ if you like this project!
 
-2. Copy [.stylelintrc.json](./.stylelintrc.json) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-   - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run `npx stylelint "**/*.{css,scss}"` on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/usage/options) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+🙏 Acknowledgements <a name="acknowledgements"></a>
 
-### [ESLint](https://eslint.org/)
+Thanks to Unsplash for providing the API
+Thanks to all contributors
 
-1. Run 
-   ```
-   npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
-   ``` 
-   *not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
+📝 License <a name="license"></a>
 
-2. Copy [.eslintrc.json](./.eslintrc.json) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run `npx eslint .` on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Eslint](https://eslint.org/docs/latest/user-guide/command-line-interface#fixing-problems) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+This project is [MIT](./LICENSE) licensed. ```
